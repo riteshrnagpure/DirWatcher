@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "9d89272a-0564-4e10-a5b5-cbfeff37f902",
+		"name": "DirWatcher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Transaction details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}v1/service/info/TR1609938486747",
+					"host": [
+						"{{BASE_URL}}v1"
+					],
+					"path": [
+						"service",
+						"info",
+						"TR1609938486747"
+					]
+				},
+				"description": "Give transaction number, and it will return all details for that execution"
+			},
+			"response": []
+		},
+		{
+			"name": "List of all transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}v1/service/transactions",
+					"host": [
+						"{{BASE_URL}}v1"
+					],
+					"path": [
+						"service",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start-Stop Scheduler at given time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}start-stop-scheduler?rotationInMinute=1",
+					"host": [
+						"{{BASE_URL}}start-stop-scheduler"
+					],
+					"query": [
+						{
+							"key": "rotationInMinute",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change configuration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"directory\": \"myDir\",\n    \"magicString\": \"myString\",\n    \"schedulerTime\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}v1/service/changeConfig",
+					"host": [
+						"{{BASE_URL}}v1"
+					],
+					"path": [
+						"service",
+						"changeConfig"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
